@@ -1,7 +1,8 @@
+
 " Colors
 " The main colors of the editor
-colorscheme badwolf " colors for a night in the wild 
-set background=dark " usually, I use a dark background
+colorscheme pablo " colors for a night in the wild 
+set background=light " usually, I use a dark background, sometimes I prefer a light one.
 
 " Enable syntax highlighting
 syntax enable

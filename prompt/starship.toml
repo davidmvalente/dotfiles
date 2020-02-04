@@ -1,0 +1,16 @@
+# Configure Starship prompt
+
+[hostname]
+ssh_only = false
+style = "bold #000080"
+
+[directory]
+style = "bold #0000ff"
+
+[git_branch]
+symbol = "🌱 "
+style = "bold #00af00"
+
+[username]
+style_user = "bold #000080"
+
