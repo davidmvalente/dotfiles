@@ -1,0 +1,24 @@
+# Install the dotfiles: create files, symlinks, and execute install scripts.
+# Configuration for [Dotbot] (https://github.com/anishathalye/dotbot)
+
+# General options
+- defaults:
+    link:
+      relink: true
+      create: true
+
+# Remove broken links
+- clean: ['~']
+
+- link:
+    ~/.bashrc: bashrc
+    ~/.bash_login: bash_login
+    ~/.bash_logout: bash_logout
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.vim/vimrc: vim/vimrc
+
+- create:
+    - ~/.vim/undo-history
+
+- shell:
+    - whoami

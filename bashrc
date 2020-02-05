@@ -8,6 +8,10 @@ case $- in
       *) return;;
 esac
 
+# display a random inspirational welcome message
+WELCOME_MESSAGES="$HOME/dotfiles/welcome_messages"
+echo; echo -e $(shuf -n 1 $WELCOME_MESSAGES);
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
