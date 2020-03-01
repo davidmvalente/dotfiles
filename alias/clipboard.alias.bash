@@ -18,3 +18,8 @@ esac
 # very useful for things like:
 # cat ~/.ssh/id_rsa.pub | pbcopy
 # have fun!
+
+# Alias the handy `fuck` command
+# eval "$(thefuck --alias)"
+# Redo the last command with sudo
+alias please='sudo $(history -p !!)'

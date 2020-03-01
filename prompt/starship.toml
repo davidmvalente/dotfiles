@@ -3,6 +3,7 @@
 [hostname]
 ssh_only = false
 style = "bold #000080"
+trim_at = "-"
 
 [directory]
 style = "bold #0000ff"
