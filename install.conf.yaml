@@ -16,6 +16,7 @@
     ~/.bash_logout: bash_logout
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vim/vimrc: vim/vimrc
+    ~/.gitconfig: git/gitconfig
 
 - create:
     - ~/.vim/undo-history
