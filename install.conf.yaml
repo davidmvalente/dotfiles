@@ -20,6 +20,9 @@
 
 - create:
     - ~/.vim/undo-history
+    - ~/.vim/swaps
+    - ~/.vim/backups
 
 - shell:
+    - type -P starship && echo "Starship in path" || echo "Starship not in path" && $(curl -fsSL https://starship.rs/install.sh | bash -s -- -y -b ~/.local/bin) 
     - whoami
