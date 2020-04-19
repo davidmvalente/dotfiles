@@ -1,6 +1,25 @@
 # Directories aliases.
 # Useful for managing/making/removing directory
 
+
+# Useful deduplication for dirstack
+dedup(){
+        declare -a new=() copy=("${DIRSTACK[@]:1}")
+        declare -A seen
+        local v i
+        seen[$PWD]=1
+        for v in "${copy[@]}"
+        do if [ -z "${seen[$v]}" ]
+            then new+=("$v")
+                seen[$v]=1
+            fi
+        done
+        dirs -c
+        for ((i=${#new[@]}-1; i>=0; i--))
+        do      builtin pushd -n "${new[i]}" >/dev/null
+        done
+}
+
 # Push and pop directories on directory stack
 pushd()
 {
@@ -10,6 +29,7 @@ pushd()
     DIR="$1"
   fi
   builtin pushd "${DIR}" > /dev/null
+  dedup
 }
 
 pushd_builtin()
@@ -20,6 +40,7 @@ pushd_builtin()
 popd()
 {
   builtin popd > /dev/null
+  dedup
 }
 
 # Use directory stack by default
