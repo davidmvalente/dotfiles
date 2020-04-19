@@ -16,6 +16,9 @@
     # autocrlf = input
     # ignorecase = false
 
+[push]
+    default = current
+
 # Pretty formatting
 [format]
     pretty = %C(yellow)%H%Creset %s %C(red)(%an, %cr)%Creset
@@ -25,15 +28,28 @@
     status = auto
     branch = auto
 
+[color "diff"]
+    frag = magenta
+    meta = yellow
+    new = green
+    old = red
+    newMoved = cyan
+    oldMoved = blue
+
+[color "status"]
+    added = green reverse
+    changed = yellow reverse
+    untracked = red reverse
+
 [alias]
 	s = status
-    # Reset options
+  # Reset options
 	unstage = reset HEAD
 	uncommit = reset --soft HEAD^
 	# Make git log readable
 	lg = log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
 	lp = log -p
-    # Automatically amend to the previous commit, without needing to edit the commit message.
+  # Automatically amend to the previous commit, without needing to edit the commit message.
 	amend = !git add -A && git commit --amend --no-edit
 	
 # [apply]
@@ -42,5 +58,3 @@
 #     filesEncoding = utf-8
 #     commitencoding = utf-8
 #     logoutputencoding = utf-8
-# [push]
-#     default = current
