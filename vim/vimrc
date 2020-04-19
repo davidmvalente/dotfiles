@@ -6,29 +6,29 @@ set mouse=a
 colorscheme pablo " colors for a night in the wild 
 set background=light " usually, I use a dark background, sometimes I prefer a light one.
 
-" Enable syntax highlighting
-syntax enable
+" Functionalities
+syntax enable           " enable syntax highlighting
+set number              " show line numbers
+set showmatch           " highlight matching [{()}]
+set autoindent          " autoindent on return
 
-" Autoindent on return
-set autoindent
+" Save a file as root (,W)
+noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+" Configuration
 " Spaces and tabs
-" Optimized for Python
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
+set tabstop=2       " number of visual spaces per TAB
+set softtabstop=2   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
 " For YAML editing 
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
-
-
-" More UI
-set number              " show line numbers
-set showmatch           " highlight matching [{()}]
+" For Python editing
+autocmd Filetype py setlocal ts=4 sts=4 sw=4 expandtab
 
 " Status bar from https://dustri.org/b/lightweight-and-sexy-status-bar-in-vim.html
-set laststatus=2 " show the status bar
-set noshowmode " remove the default indicator
+set laststatus=2                " show the status bar
+set noshowmode                  " remove the default indicator
 set statusline=
 set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''} 
 set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
@@ -39,31 +39,36 @@ set statusline+=%#Visual#       " colour
 set statusline+=%{&paste?'\ PASTE\ ':''}
 set statusline+=%{&spell?'\ SPELL\ ':''}
 set statusline+=%#CursorIM#     " colour
-set statusline+=%R                        " readonly flag
-set statusline+=%M\                      " modified [+] flag
-set statusline+=%#Cursor#            " colour
-set statusline+=%#CursorLine#     " colour
-set statusline+=\ %t\                   " short file name
-set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
-set statusline+=\ %Y\                   " file type
-set statusline+=%#CursorIM#     " colour
-set statusline+=\ %3l:%-2c\         " line + column
+set statusline+=%R              " readonly flag
+set statusline+=%M\             " modified [+] flag
 set statusline+=%#Cursor#       " colour
-set statusline+=\ %3p%%\                " percentage
+set statusline+=%#CursorLine#   " colour
+set statusline+=\ %t\           " short file name
+set statusline+=%=              " right align
+set statusline+=%#CursorLine#   " colour
+set statusline+=\ %Y\           " file type
+set statusline+=%#CursorIM#     " colour
+set statusline+=\ %3l:%-2c\     " line + column
+set statusline+=%#Cursor#       " colour
+set statusline+=\ %3p%%\        " percentage
 
-" File browser bar
-" Remove initial info banner
-let g:netrw_banner = 0
-" Tree mode browsing
-let g:netrw_liststyle = 3
-" Open files on vertical split
-let g:netrw_browse_split = 4
+" File browser tab
+let g:netrw_banner = 0          " Remove initial info banner
+let g:netrw_liststyle = 3       " Open files on vertical split
+let g:netrw_browse_split = 4    " Tree mode browsing
 let g:netrw_altv = 1
-" Set width at 25%
-let g:netrw_winsize = 25
+let g:netrw_winsize = 25        " Set width at 25%
+
 " Automatically open browser bar on opening
-" augroup ProjectDrawer
+"augroup ProjectDrawer
 "autocmd!
 "autocmd VimEnter * :Vexplore
 "augroup END
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+    set undodir=~/.vim/undo
+    endif
+
