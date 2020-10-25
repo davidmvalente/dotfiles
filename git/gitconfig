@@ -47,6 +47,8 @@
 	unstage = reset HEAD
 	uncommit = reset --soft HEAD^
 	# Make git log readable
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --al
 	lg = log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
 	lp = log -p
   # Automatically amend to the previous commit, without needing to edit the commit message.
