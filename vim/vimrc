@@ -12,10 +12,15 @@ set number              " show line numbers
 set showmatch           " highlight matching [{()}]
 set autoindent          " autoindent on return
 
+" Hotkeys shortcuts
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+" Indent file  (,F)
+noremap <leader>F :gg=G<CR>
 
-" Configuration
+" Configuration and formatting
+filetype indent on
+
 " Spaces and tabs
 set tabstop=2       " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing
