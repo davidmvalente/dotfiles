@@ -35,9 +35,10 @@ if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
 fi
 
 # Environment management
-export PATH="/home/david/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # Display a random inspirational welcome message!
 WELCOME_MESSAGES="$HOME/dotfiles/welcome_messages"
