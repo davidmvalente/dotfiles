@@ -2,16 +2,16 @@
 
 [hostname]
 ssh_only = false
-style = "bold #000080"
-trim_at = "-"
+style = "bold blue"
 
 [directory]
-style = "bold #0000ff"
+style = "bold pink"
 
 [git_branch]
 symbol = "🌱 "
-style = "bold #00af00"
+style = "bold green"
 
 [username]
-style_user = "bold #000080"
-
+show_always = true
+style_user = "bold blue"
+style_root = "bold red"

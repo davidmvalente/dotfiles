@@ -4,7 +4,7 @@ set mouse=a
 " Colors
 " The main colors of the editor
 colorscheme pablo " colors for a night in the wild 
-set background=light " usually, I use a dark background, sometimes I prefer a light one.
+set background=dark " usually, I use a dark background, sometimes I prefer a light one.
 
 " Functionalities
 syntax enable           " enable syntax highlighting

@@ -17,6 +17,8 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vim/vimrc: vim/vimrc
     ~/.gitconfig: git/gitconfig
+    ~/.local/bin/pssh: scripts/pssh.sh
+
 
 - create:
     - ~/.vim/undo-history
@@ -26,4 +28,6 @@
 - shell:
     - git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     - type -P starship && echo "Starship in path" || echo "Starship not in path" && $(curl -fsSL https://starship.rs/install.sh | bash -s -- -y -b ~/.local/bin) 
+    - sudo apt-get install pass
+    - sudo apt-get install sshpass
     - whoami
