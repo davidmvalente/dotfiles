@@ -4,8 +4,6 @@
 ssh_only = false
 style = "bold blue"
 
-[directory]
-style = "bold pink"
 
 [git_branch]
 symbol = "🌱 "
@@ -15,3 +13,7 @@ style = "bold green"
 show_always = true
 style_user = "bold blue"
 style_root = "bold red"
+
+[env_var]
+variable = "STARSHIP_SHELL"
+default = "unknown shell"
