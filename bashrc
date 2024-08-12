@@ -42,4 +42,5 @@ eval "$(pyenv init -)"
 
 # Display a random inspirational welcome message!
 WELCOME_MESSAGES="$HOME/dotfiles/welcome_messages"
-echo; echo -e $(shuf -n 1 $WELCOME_MESSAGES);
+lines=("${(@f)$(<${WELCOME_MESSAGES})}")
+echo; echo -e "${lines[RANDOM%${#lines[@]}+1]}"

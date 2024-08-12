@@ -12,6 +12,7 @@
 
 - link:
     ~/.bashrc: bashrc
+    ~/.zshrc: zshrc
     ~/.bash_login: bash_login
     ~/.bash_logout: bash_logout
     ~/.tmux.conf: tmux/tmux.conf

@@ -6,6 +6,13 @@
 export STARSHIP_CONFIG=$HOME/dotfiles/prompt/starship.toml
 
 # Run the prompt
-eval "$($HOME/.local/bin/starship init bash)"
+# Check if the shell is Bash or Zsh and initialize Starship accordingly
+if [ -n "$BASH_VERSION" ]; then
+    # We're in Bash
+    eval "$(starship init bash)"
+elif [ -n "$ZSH_VERSION" ]; then
+    # We're in Zsh
+    eval "$(starship init zsh)"
+fi
 
 
